@@ -6,7 +6,7 @@ A comprehensive emulator for Intel Xeon Phi Knights Corner (KNC) and Knights Lan
 
 ## Overview
 
-IMIC_SDE provides complete emulation of Intel's Many Integrated Core (MIC) architecture, supporting both Knights Corner (first generation) and Knights Landing (second generation) Xeon Phi processors. This emulator enables developers to build, test, and optimize KNC/KNL applications on standard x86-64 systems.
+IMIC_SDE provides complete emulation of Intel's Many Integrated Core (MIC) architecture, supporting both Knights Corner (first generation) and Knights Landing (second generation) Xeon Phi processors. This emulator enables developers to build, test, and optimize KNC/KNL applications on standard x86-64 systems. I've thoroughly checked for any license conflicts or legal issues and I have found none, I based this on solely open source components. However, if there does happen to be any conflicts or issues you notice please notify me and I'll fix it as soon as I can, I wish to comply with law and ethics to my full capacity.
 
 ## Supported Architectures
 
@@ -311,3 +311,4 @@ The IMIC_SDE project includes several major original implementations that provid
 - **Scalable architecture** supporting 1-60 cores (KNC) and 1-68 cores (KNL)
 
 These implementations represent significant original development work that enables complete KNC and KNL software development without requiring physical hardware, providing researchers and developers with a full-featured emulation environment for Knights Corner and Knights Landing architecture exploration and optimization.
+
