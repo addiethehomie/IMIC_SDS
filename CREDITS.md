@@ -1,7 +1,8 @@
-# CREDITS - Software Bill of Materials
+# IMIC_SDS Software Bill of Materials
 
-## Overview
-This document provides a comprehensive Software Bill of Materials (SBOM) for the IMIC_SDE (Intel MIC Software Development Emulator) project, including all open source components used, their licenses, and attribution requirements.
+**Independent Many Integrated Core Software Development Suite - Complete Attribution**
+
+This document provides comprehensive attribution for all components used in IMIC_SDS, ensuring full compliance with all open-source licenses and intellectual property requirements.
 
 ## Open Source Components
 
@@ -164,44 +165,49 @@ This document provides a comprehensive Software Bill of Materials (SBOM) for the
 - **GCC-KNC** - Reference usage only
 - **liboffloadmic** - Reference usage only
 
-## Original IMIC_SDE Implementations
+## Original IMIC_SDS Implementations
 
 ### Core Components (Original Development)
-1. **KNC Binary Loader** (`src/knc_binary_loader.cpp`)
-   - Original implementation for KNC (EM_K1OM) ELF binary loading
-   - Handles KNC-specific relocations and symbols
-   - Copyright: IMIC_SDE Project
+1. **KNC/KNL Binary Loader** (`src/knc_binary_loader.cpp`)
+   - Original implementation for KNC/KNL (EM_K1OM) ELF binary loading
+   - Handles KNC/KNL-specific relocations and symbols
+   - Copyright: IMIC_SDS Project
 
-2. **Ring Bus Simulator** (`src/ring_bus_simulator.cpp`)
+2. **Architecture-Aware Ring Bus Simulator** (`src/ring_bus_simulator.cpp`)
    - Original implementation inspired by BookSim2 research
-   - KNC-specific ring topology with 8 MMU placement
-   - Bidirectional ring at 134.784 GB/s
-   - Copyright: IMIC_SDE Project
+   - KNC single-ring (8 MMUs) and KNL dual-ring (38 MMUs) topology
+   - KNC: 134.784 GB/s, KNL: 213.312 GB/s
+   - Copyright: IMIC_SDS Project
 
-3. **KNC Runtime Environment** (`src/knc_runtime.cpp`)
-   - Original KNC system call emulation
-   - Memory management and address translation
-   - Copyright: IMIC_SDE Project
+3. **KNC/KNL Runtime Environment** (`src/knc_runtime.cpp`)
+   - Original KNC/KNL system call emulation
+   - Architecture-aware memory management (8GB/16GB)
+   - Dynamic MMU allocation per architecture
+   - Copyright: IMIC_SDS Project
 
-4. **KNC Debugger** (`src/knc_debugger.cpp`)
+4. **KNC/KNL Debugger** (`src/knc_debugger.cpp`)
    - Original GDB-compatible debugging interface
+   - Architecture-aware debugging for both KNC and KNL
    - Breakpoint management and instruction tracing
-   - Copyright: IMIC_SDE Project
+   - Copyright: IMIC_SDS Project
 
 5. **Performance Monitor** (`src/knc_performance_monitor.cpp`)
-   - Original KNC-specific performance counters
+   - Original KNC/KNL-specific performance counters
    - Integration with Intel PCM patterns
-   - Copyright: IMIC_SDE Project
+   - Architecture-specific performance metrics
+   - Copyright: IMIC_SDS Project
 
 6. **PCIe Bridge Simulator** (`src/pcie_bridge.cpp`)
    - Original PCIe 2.0 x16 host-coprocessor communication
-   - Models KNC-specific PCIe bandwidth and latency
-   - Copyright: IMIC_SDE Project
+   - Models KNC/KNL-specific PCIe bandwidth and latency
+   - Architecture-agnostic communication layer
+   - Copyright: IMIC_SDS Project
 
 7. **Main Application** (`src/main.cpp`)
    - Original command-line interface and configuration
+   - Architecture detection and selection (KNC/KNL)
    - Integration of all components
-   - Copyright: IMIC_SDE Project
+   - Copyright: IMIC_SDS Project
 
 ### Header Files (Original Development)
 - `include/knc_types.h` - KNC architecture definitions and constants

@@ -1,15 +1,15 @@
-# IMIC_SDE Build Instructions
+# IMIC_SDS Build Instructions
 
-**Intel MIC Software Development Emulator - Build Guide**
+**Independent Many Integrated Core Software Development Suite - Build Guide**
 
-This guide provides instructions for building the IMIC_SDE emulator, supporting both Knights Corner (KNC) and Knights Landing (KNL) architectures.
+This guide provides instructions for building the IMIC_SDS emulator, supporting both Knights Corner (KNC) and Knights Landing (KNL) architectures.
 
 ## Overview
-IMIC_SDE emulates Intel Xeon Phi processors with full KNC/KNL instruction set support, ring bus simulation, and comprehensive debugging capabilities.
+IMIC_SDS emulates Intel Xeon Phi processors with full KNC/KNL instruction set support, ring bus simulation, and comprehensive debugging capabilities.
 
 ## Repository Structure
 ```
-IMIC_SDE/
+IMIC_SDS/
 ├── src/                    # Source files
 │   ├── main.cpp            # Main entry point with architecture detection
 │   ├── knc_binary_loader.cpp

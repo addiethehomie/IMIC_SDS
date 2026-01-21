@@ -1,12 +1,11 @@
 # IMIC_SDS Usage Guide
 
-**Independant MIC Software Development Suite - Usage Instructions**
-**NOT AFFILIATED WITH INTEL**
+**Independent Many Integrated Core Software Development Suite - User Guide**
 
-This guide provides comprehensive usage instructions for the IMIC_SDE emulator, supporting both Knights Corner (KNC) and Knights Landing (KNL) architectures.
+This guide provides comprehensive usage instructions for the IMIC_SDS emulator, supporting both Knights Corner (KNC) and Knights Landing (KNL) architectures.
 
 ## Overview
-IMIC_SDS (Independant MIC Software Development Suite) provides a complete environment for developing and testing KNC (Knights Corner) applications without requiring physical KNC hardware. This emulator specifically targets the Intel Xeon Phi 5110P architecture with 60 cores at 1.053 GHz and 8GB of memory.
+IMIC_SDS provides complete emulation of Intel Xeon Phi processors with dual-architecture support, enabling development without physical hardware. This emulator specifically targets the Intel Xeon Phi 5110P architecture with 60 cores at 1.053 GHz and 8GB of memory.
 
 ## Repository Information
 This guide is for the IMIC_SDE repository which contains:
@@ -301,4 +300,3 @@ k1om-mpss-linux-gcc -O3 -mavx512f -o vector_add vector_add.c
 ```
 
 This provides a complete development environment for KNC applications with full debugging, performance analysis, and ring bus simulation capabilities.
-

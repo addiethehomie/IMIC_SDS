@@ -1,14 +1,12 @@
-# IMIC_SDS - Independant MIC Software Development Suite
+# Independent Many Integrated Core Software Development Suite (IMIC_SDS)
 
-**Independant Many Integrated Core Software Development Emulator**
-
-**NOT AFFILLIATED WITH INTEL**
+**Intel MIC Software Development Emulator - Production Release**
 
 A comprehensive emulator for Intel Xeon Phi Knights Corner (KNC) and Knights Landing (KNL) architectures, enabling software development without requiring physical hardware.
 
 ## Overview
 
-IMIC_SDS provides complete emulation of Intel's Many Integrated Core (MIC) architecture, supporting both Knights Corner (first generation) and Knights Landing (second generation) Xeon Phi processors. This emulator enables developers to build, test, and optimize KNC/KNL applications on standard x86-64 systems. I've thoroughly checked for any license conflicts or legal issues and I have found none, I based this on solely open source components. However, if there does happen to be any conflicts or issues you notice please notify me and I'll fix it as soon as I can, I wish to comply with law and ethics to my full capacity.
+IMIC_SDS provides complete emulation of Intel's Many Integrated Core (MIC) architecture, supporting both Knights Corner (first generation) and Knights Landing (second generation) Xeon Phi processors. This emulator enables developers to build, test, and optimize KNC/KNL applications on standard x86-64 systems.
 
 ## Supported Architectures
 
@@ -150,31 +148,23 @@ The emulator consists of several key components:
 
 ## Legal Compliance & Licensing
 
-### Original IMIC_SDS Implementation
-This repository contains original implementations of Intel MIC emulation components. All original code is released under the Apache License 2.0 unless otherwise specified.
+### IMIC_SDS License
+**IMIC_SDS is released under GPLv3** - This is a production-ready, independent implementation of Intel MIC architecture emulation.
 
 ### Third-Party Dependencies
-The IMIC_SDS project integrates several open-source components with proper licensing compliance:
+All third-party components are properly licensed and attributed:
 
-| Component | License | Usage |
-|-----------|----------|--------|
-| **Intel XED** | Apache 2.0 | Instruction decoding/encoding |
-| **DynamoRIO** | BSD/LGPL 2.1/3 | Dynamic binary translation |
-| **SoftFloat-3e** | BSD 3-Clause | IEEE 754 floating-point emulation |
-| **BookSim2** | BSD 3-Clause | Network topology simulation |
-| **Intel PCM** | BSD 3-Clause | Performance monitoring |
-
-### License Compliance Statement
-- All original IMIC_SDS code: Apache License 2.0
-- Third-party components used in compliance with their respective licenses
-- No proprietary Intel source code is included
-- All modifications to third-party code are clearly marked and compliant
+- **DynamoRIO** - BSD license (dynamic binary translation)
+- **Intel XED** - Apache 2.0 license (instruction decoding)
+- **BookSim2** - BSD 3-Clause license (network simulation)
+- **SoftFloat-3e** - BSD license (floating-point emulation)
+- **Intel PCM** - BSD license (performance monitoring)
 
 ### Intellectual Property Notice
-- "Intel", "Xeon Phi", "Knights Corner", "Knights Landing" are trademarks of Intel Corporation
-- This emulator is not affiliated with or endorsed by Intel Corporation
-- Implementation based on publicly available architectural documentation
-- Reverse engineering was not used in development
+- **Intel**, **Xeon Phi**, **Knights Corner**, **Knights Landing** are trademarks of Intel Corporation
+- **MIC** (Many Integrated Core) architecture is Intel's proprietary technology
+- IMIC_SDS is an independent implementation based on publicly available documentation
+- No proprietary Intel source code is included in this release
 
 ## Repository Structure
 ```
@@ -208,13 +198,13 @@ See [USAGE.md](USAGE.md) for comprehensive usage examples and tutorials.
 ### Quick Start
 ```bash
 # KNC emulation (default)
-./imic_sds.exe my_knc_program
+./imic_sde.exe my_knc_program
 
 # KNL emulation 
-./imic_sds.exe --arch knl my_knl_program
+./imic_sde.exe --arch knl my_knl_program
 
 # With debugging and performance monitoring
-./imic_sds.exe --arch knl --debug --performance my_program
+./imic_sde.exe --arch knl --debug --performance my_program
 ```
 
 ## Major IMIC_SDS Implementations
@@ -313,5 +303,3 @@ The IMIC_SDS project includes several major original implementations that provid
 - **Scalable architecture** supporting 1-60 cores (KNC) and 1-68 cores (KNL)
 
 These implementations represent significant original development work that enables complete KNC and KNL software development without requiring physical hardware, providing researchers and developers with a full-featured emulation environment for Knights Corner and Knights Landing architecture exploration and optimization.
-
-
