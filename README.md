@@ -1,6 +1,7 @@
 # Independent Many Integrated Core Software Development Suite (IMIC_SDS)
 
-**Intel MIC Software Development Emulator - Production Release**
+**Independent MIC Software Development Suite - Production Release**
+**NOT AFFILIATED WITH INTEL**
 
 A comprehensive emulator for Intel Xeon Phi Knights Corner (KNC) and Knights Landing (KNL) architectures, enabling software development without requiring physical hardware.
 
@@ -303,3 +304,4 @@ The IMIC_SDS project includes several major original implementations that provid
 - **Scalable architecture** supporting 1-60 cores (KNC) and 1-68 cores (KNL)
 
 These implementations represent significant original development work that enables complete KNC and KNL software development without requiring physical hardware, providing researchers and developers with a full-featured emulation environment for Knights Corner and Knights Landing architecture exploration and optimization.
+
