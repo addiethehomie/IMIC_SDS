@@ -21,8 +21,7 @@ IMIC_SDE/
 │   └── pcie_bridge.cpp
 ├── include/               # Header files
 ├── config/                # Configuration files
-├── OpenSource/            # Third-party dependencies
-└── test/                  # Test programs
+└── OpenSource/            # Third-party dependencies
 ```
 
 ## Prerequisites
@@ -70,16 +69,16 @@ The emulator can be configured via:
 - Configuration files (config/imic_sde.conf)
 - Environment variables
 
-## Testing
-Run the test suite:
-```bash
-# Compile test programs (requires KNC cross-compiler)
-# Then run with emulator
-./imic_sde.exe test/simple_test
-```
+## Supported Hardware
 
-## Xeon Phi 5110P Specifications
+### Knights Corner (KNC) - Xeon Phi 5110P
 - **Memory**: 8GB total with 8 MMUs (1GB each)
 - **MMU Placement**: Symmetrically distributed around ring bus
 - **Cores**: 60 x86 cores at 1.053 GHz
-- **Ring Bus**: Bidirectional at 134.784 GB/s
+- **Ring Bus**: Single bidirectional ring at 134.784 GB/s
+
+### Knights Landing (KNL) - Xeon Phi 7250
+- **Memory**: 16GB total with 38 MMUs (~421MB each)
+- **MMU Placement**: Distributed around dual ring buses
+- **Cores**: 68 x86 cores at 1.4 GHz base (turbo to 1.5 GHz)
+- **Ring Bus**: Dual bidirectional rings at 213.312 GB/s total

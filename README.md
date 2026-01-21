@@ -11,14 +11,14 @@ IMIC_SDE provides complete emulation of Intel's Many Integrated Core (MIC) archi
 ## Supported Architectures
 
 ### Knights Corner (KNC) - First Generation
-- **Xeon Phi 5110P/7120P**: 60 cores, 8GB memory, 1.053 GHz
+- **Xeon Phi 5110P**: 60 cores, 8GB memory, 1.053 GHz
 - **Vector Processing**: 512-bit SIMD with 32 vector registers
 - **Memory System**: 8 symmetric MMUs, 512KB L2 cache per tile
 - **Interconnect**: Single bidirectional ring bus at 134.784 GB/s
 - **Instruction Set**: Complete KNC ISA with AVX-512 foundation
 
 ### Knights Landing (KNL) - Second Generation  
-- **Xeon Phi 7210/7250**: 72 cores, 16GB memory, 1.4 GHz base
+- **Xeon Phi 7250**: 68 cores, 16GB memory, 1.4 GHz base
 - **Vector Processing**: Enhanced 512-bit SIMD with AVX-512 extensions
 - **Memory System**: 38 MMUs, 1MB L2 cache per tile, DDR4 support
 - **Interconnect**: Dual bidirectional ring buses at 213.312 GB/s total
@@ -33,7 +33,7 @@ IMIC_SDE provides complete emulation of Intel's Many Integrated Core (MIC) archi
 
 | Feature | KNC (Knights Corner) | KNL (Knights Landing) |
 |---------|---------------------|-----------------------|
-| **Core Count** | 60 cores @ 1.053 GHz | 72 cores @ 1.4 GHz |
+| **Core Count** | 60 cores @ 1.053 GHz | 68 cores @ 1.4 GHz |
 | **Memory System** | 8GB (8 MMUs × 1GB) | 16GB (38 MMUs × ~421MB) |
 | **Cache Hierarchy** | 32KB L1, 512KB L2 per tile | 32KB L1, 1MB L2 per tile |
 | **Interconnect** | Single ring @ 134.784 GB/s | Dual rings @ 213.312 GB/s |
@@ -65,7 +65,7 @@ The emulator consists of several key components:
 - **Memory System** - Architecture-aware MMU system (8 MMUs for KNC, 38 MMUs for KNL) with cache simulation
 
 ### Target Hardware Support
-#### Knights Corner (KNC) - Xeon Phi 5110P/7120P
+#### Knights Corner (KNC) - Xeon Phi 5110P
 - **Cores**: 60 x86 cores at 1.053 GHz each
 - **Memory**: 8GB GDDR5 total with 8 MMUs (1GB each)
 - **Ring Bus**: Single bidirectional ring at 134.784 GB/s
@@ -73,8 +73,8 @@ The emulator consists of several key components:
 - **Vector Units**: 512-bit SIMD with 32 vector registers per core
 - **Interconnect**: Ring-based topology with symmetric MMU placement
 
-#### Knights Landing (KNL) - Xeon Phi 7210/7250
-- **Cores**: 72 x86 cores at 1.4 GHz base (turbo to 1.5 GHz)
+#### Knights Landing (KNL) - Xeon Phi 7250
+- **Cores**: 68 x86 cores at 1.4 GHz base (turbo to 1.5 GHz)
 - **Memory**: 16GB DDR4 total with 38 MMUs (~421MB each)
 - **Ring Bus**: Dual bidirectional rings at 213.312 GB/s total
 - **Cache**: 32KB L1 per core, 1MB L2 shared
@@ -110,7 +110,7 @@ The emulator consists of several key components:
 - **Cycle-Accurate Simulation** - Optional cycle-precise timing models
 
 ### Configuration Options
-- **Flexible Core Count** - Simulate 1-60 cores (KNC) or 1-72 cores (KNL) as needed
+- **Flexible Core Count** - Simulate 1-60 cores (KNC) or 1-68 cores (KNL) as needed
 - **Configurable Memory** - Adjustable memory size up to 8GB (KNC) or 16GB (KNL)
 - **Architecture Selection** - Runtime switching between KNC and KNL architectures
 - **Ring Bus Tuning** - Configurable bandwidth and latency parameters per architecture
@@ -288,13 +288,13 @@ The IMIC_SDE project includes several major original implementations that provid
 
 #### Dual-Architecture Support
 - **Complete KNC simulation** with accurate 60-core, 8GB, 1.053 GHz timing
-- **Complete KNL simulation** with accurate 72-core, 16GB, 1.4 GHz timing
+- **Complete KNL simulation** with accurate 68-core, 16GB, 1.4 GHz timing
 - **Architecture-aware components** that adapt to selected target
 - **Seamless switching** between KNC and KNL modes
 
 #### Hardware Fidelity
-- **KNC**: 60 cores, 8GB memory, single ring (134.784 GB/s), 8 MMUs
-- **KNL**: 72 cores, 16GB memory, dual rings (213.312 GB/s), 38 MMUs
+- **KNC (Xeon Phi 5110P)**: 60 cores, 8GB memory, single ring (134.784 GB/s), 8 MMUs
+- **KNL (Xeon Phi 7250)**: 68 cores, 16GB memory, dual rings (213.312 GB/s), 38 MMUs
 - **512-bit vector processing** with full KNC ISA and KNL AVX-512 extensions
 - **Cycle-accurate interconnects** with architecture-specific timing
 
@@ -308,6 +308,6 @@ The IMIC_SDE project includes several major original implementations that provid
 - **Cycle-accurate timing** for performance prediction
 - **Contention modeling** for realistic network behavior
 - **Memory hierarchy simulation** with cache and MMU modeling
-- **Scalable architecture** supporting 1-60 cores (KNC) and 1-72 cores (KNL)
+- **Scalable architecture** supporting 1-60 cores (KNC) and 1-68 cores (KNL)
 
 These implementations represent significant original development work that enables complete KNC and KNL software development without requiring physical hardware, providing researchers and developers with a full-featured emulation environment for Knights Corner and Knights Landing architecture exploration and optimization.

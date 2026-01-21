@@ -34,7 +34,7 @@ This guide is for the IMIC_SDE repository which contains:
 # Knights Corner (60 cores, 8GB)
 ./imic_sde.exe --arch knc [options] binary
 
-# Knights Landing (72 cores, 16GB)  
+# Knights Landing (68 cores, 16GB)  
 ./imic_sde.exe --arch knl [options] binary
 ```
 
